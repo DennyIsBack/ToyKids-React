@@ -1,0 +1,52 @@
+﻿.nav-item a {
+    position: relative;
+    text-decoration: none !important;
+    transition: color 0.3s ease; /* Adiciona uma transição de cor para um efeito mais suave */
+}
+
+    .nav-item a:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Ajuste para posicioná-lo 2px abaixo do texto */
+        width: 0;
+        height: 3px; /* Altura da linha */
+        background: transparent; /* Inicialmente transparente */
+        transition: width 0.3s ease, background 0.3s ease; /* Adiciona transições para a largura e cor de fundo */
+    }
+
+    .nav-item a:hover:after,
+    .nav-item a.active:after {
+        width: 100%; /* Largura total ao passar o mouse ou para o link ativo */
+        background: #FF005C; /* Cor desejada para o link ativo */
+    }
+
+
+.nav-menu {
+    display: flex;
+    gap: 70px;
+}
+
+
+@media screen and (max-width:940px) {
+    /*.nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 90px;
+        flex-direction: column;
+        background-color: rgba(0,0,0,.9);
+        width: 100%;
+        height: 90vh;
+        z-index: 999;
+        text-align: center;
+        transition: .3s;
+    }*/
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+}

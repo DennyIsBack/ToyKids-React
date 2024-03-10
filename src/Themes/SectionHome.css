@@ -1,0 +1,51 @@
+﻿/* Variáveis 
+:root {
+    --border-size: 20px;  largura da borda 
+    --border-color: red;
+    --size: 300px;  só funciona para quadrados 
+}
+
+ Estilos 
+
+.imgOverLayer {
+    z-index: 1;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+
+    .imgOverLayer img {
+        width: var(--size);
+        height: var(--size);
+        box-shadow: 0 0 10px #0c0c0c;
+        border: 1px solid #ccc;
+    }
+
+    .imgOverLayer:before,
+    .imgOverLayer:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        margin: 0;
+        padding: 0;
+        transform: rotate(45deg);
+    }
+
+    .imgOverLayer:before {
+        border-left: var(--border-size) solid var(--border-color);
+        border-right: var(--border-size) solid var(--border-color);
+        z-index: -1;
+        width: calc(var(--size) - (var(--border-size) * 2));
+        height: var(--size);
+    }
+
+    .imgOverLayer:after {
+        border-top: var(--border-size) solid var(--border-color);
+        border-bottom: var(--border-size) solid var(--border-color);
+        z-index: 1;
+        width: var(--size);
+        height: calc(var(--size) - (var(--border-size) * 2));
+    }
+*/
