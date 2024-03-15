@@ -16,7 +16,7 @@ const Calendar = () => {
     const [highlightedDays, setHighlightedDays] = useState([1, 2, 13]);
 
     const api = axios.create({
-        baseURL: 'https://localhost:44308'
+        baseURL: 'https://localhost:44326'
     });
 
     const handleDateChange = (newValue) => {
@@ -24,16 +24,16 @@ const Calendar = () => {
     };
 
     const handleDateAccept = () => {
-        // Aqui você pode fazer a requisição POST com Axios
-        // api.get('/Calendar/ConsultDateCalendar', { params: { Date: value } })
-        //     .then(response => {
-        //         // Lógica para lidar com a resposta da requisição
-        //         console.log('Requisição POST enviada com sucesso:', response);
-        //     })
-        //     .catch(error => {
-        //         // Lógica para lidar com erros na requisição
-        //         console.error('Erro ao enviar requisição POST:', error);
-        //     });
+        //Aqui você pode fazer a requisição POST com Axios
+        api.get('/Calendar/ConsultDateCalendar', { params: { Date: value } })
+            .then(response => {
+                // Lógica para lidar com a resposta da requisição
+                console.log('Requisição POST enviada com sucesso:', response);
+            })
+            .catch(error => {
+                // Lógica para lidar com erros na requisição
+                console.error('Erro ao enviar requisição POST:', error);
+            });
     };
 
     return (

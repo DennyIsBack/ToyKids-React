@@ -8,7 +8,7 @@ import Header from './Header';
 import Box from '@mui/material/Box';
 import Footer from './Footer';
 import '../Themes/Navbar.css';
-import LandingPage from './Sections';
+import LandingPageSections from './Sections';
 
 const sections = [
     { title: 'Inicio', id: 'section1' },
@@ -72,7 +72,7 @@ const sidebar = {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Blog() {
+export default function LandingPage() {
 
     return (
         <React.Fragment>
@@ -85,7 +85,7 @@ export default function Blog() {
                 }}>
                 <Header title="Toy" sections={sections} />
                 {/*<Navbar sections={sections} />*/}
-                <LandingPage />
+                <LandingPageSections />
                 {/*  <MainFeaturedPost post={mainFeaturedPost} />*/}
                 {/*  <Grid container spacing={4}>*/}
                 {/*    {featuredPosts.map((post) => (*/}

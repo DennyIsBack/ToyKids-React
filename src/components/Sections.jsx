@@ -3,7 +3,7 @@ import GetStarted from './HomeSection';
 import Calendar from './Calendar';
 
 
-const LandingPage = () => {
+const LandingPageSections = () => {
     return (
         <div>
             <GetStarted />
@@ -14,4 +14,4 @@ const LandingPage = () => {
     );
 }
 
-export default LandingPage;
+export default LandingPageSections;
