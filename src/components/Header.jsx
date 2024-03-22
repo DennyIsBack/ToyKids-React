@@ -28,49 +28,46 @@ const sections = ['Inicio', 'Agenda de horarios', 'Sobre'];
 function Header(props) {
     const [value, setValue] = React.useState(0);
     const [open, setOpen] = React.useState(false);
-    const [openModal, setOpenModal] = React.useState(false);
-    const [stepModal, setStepModal] = React.useState(0);
-    const [phoneNumber, setPhoneNumber] = React.useState('(00) 00000-0000');
+    // const [openModal, setOpenModal] = React.useState(false);
+    // const [stepModal, setStepModal] = React.useState(0);
+    // const [phoneNumber, setPhoneNumber] = React.useState('(00) 00000-0000');
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    // const handleChange = (event, newValue) => {
+    //     setValue(newValue);
+    // };
 
-    const [click, setClick] = React.useState(false)
-    const handleClick = () => setClick(!click)
+    // const TextMaskAdapter = React.forwardRef(function TextMaskAdapter(props, ref) {
+    //     const { onChange, ...other } = props;
+    //     return (
+    //         <IMaskInput
+    //             {...other}
+    //             mask="(#0) 00000-0000"
+    //             definitions={{
+    //                 '#': /[1-9]/,
+    //             }}
+    //             inputRef={ref}
+    //             onAccept={(value) => onChange({ target: { name: props.name, value } })}
+    //             overwrite
+    //         />
+    //     );
+    // });
 
-    const TextMaskAdapter = React.forwardRef(function TextMaskAdapter(props, ref) {
-        const { onChange, ...other } = props;
-        return (
-            <IMaskInput
-                {...other}
-                mask="(#0) 00000-0000"
-                definitions={{
-                    '#': /[1-9]/,
-                }}
-                inputRef={ref}
-                onAccept={(value) => onChange({ target: { name: props.name, value } })}
-                overwrite
-            />
-        );
-    });
-
-    TextMaskAdapter.propTypes = {
-        name: PropTypes.string.isRequired,
-        onChange: PropTypes.func.isRequired,
-    };
+    // TextMaskAdapter.propTypes = {
+    //     name: PropTypes.string.isRequired,
+    //     onChange: PropTypes.func.isRequired,
+    // };
 
     return (
         <React.Fragment>
-            <AppBar position="fixed" sx={{ backgroundColor: '#ffffff' }}>
+            <AppBar position="fixed" sx={{ backgroundColor: '#ffffff' }} className="header">
                 <Toolbar disableGutters>
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: { xs: 'space-between' } }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }} ml="40px">
-                            <Avatar alt="Logo ToyKids" src={Logo} sx={{ width: 56, height: 56 }} />
+                            <Avatar alt="Logo ToyKids" src={Logo} sx={{ width: 56, height: 56, ml:8 }} />
                             <Typography
                                 variant="h3"
                                 sx={{
@@ -165,22 +162,22 @@ function Header(props) {
                                                 height: '100%',
                                                 cursor: 'pointer'
                                             }}>
-                                            <Typography variant="body1" style={{ fontWeight: '500', fontSize: '16px' }}>
+                                            <Typography variant="body1" style={{ fontWeight: '400', fontSize: '18px' }}>
                                                 {section.title}
                                             </Typography>
                                         </Link>
                                     </li>
                                 ))}
-                                <Box sx={{ ml: 5, mr: 2, mt: '-3px' }}>
+                                {/* <Box sx={{ ml: 5, mr: 2, mt: '-3px' }}>
                                     <Button size="small" variant="contained" color="secondary" endIcon={<Login />} onClick={() => {setOpenModal(true);  setPhoneNumber("(00) 00000-0000")}}>Entrar</Button>
-                                </Box>
+                                </Box> */}
                             </ul>
                         </Box>
                     </Box>
                 </Toolbar>
             </AppBar>
 
-            <Modal open={openModal} onClose={() => setOpenModal(false)}>
+            {/* <Modal open={openModal} onClose={() => setOpenModal(false)}>
                 <ModalDialog
                     color="primary"
                     layout="center"
@@ -218,7 +215,7 @@ function Header(props) {
                         </>
                     )}
                 </ModalDialog>
-            </Modal>
+            </Modal> */}
 
         </React.Fragment>
     );

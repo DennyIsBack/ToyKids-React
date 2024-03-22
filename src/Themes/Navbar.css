@@ -24,11 +24,13 @@
 
     .nav-menu {
         display: flex;
-      }
+        gap: 60px;
+        margin-right: 150px;
+    }
       
-      .nav-menu li:not(:last-child) {
+      /* .nav-menu li:not(:last-child) {
         margin-left: 60px;
-      }
+      } */
 
 
 @media screen and (max-width:940px) {
@@ -45,9 +47,9 @@
         transition: .3s;
     }*/
 
-        .nav-menu.active {
+        /* .nav-menu.active {
             left: 0;
-        }
+        } */
 
     /* .nav-item {
         margin: 1.5rem 0;
